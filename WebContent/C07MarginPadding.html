@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C07MarginPadding.html</title>
+    <style>
+        #div1{
+            border:1px solid gray;
+            padding-top:20px;
+            padding-right:20px;
+            padding-bottom:20px;
+            padding-left:20px;
+            background:url(./images/appleVector.png) repeat-x;
+        }
+        #div2{
+            border:1px solid red;
+            padding:20px;
+        }
+        #div3{
+            border:1px solid blue;
+            padding: 30px 50px;
+        }
+        #div4{
+            border:1px solid green;
+            padding:30px 100px 10px;
+        }
+        #div5{
+            border:1px solid black;
+            padding:10px 30px 50px 70px;
+        }
+    </style>
+</head>
+<body>
+    <h2>여백관련속성</h2>
+    <h3>padding(안쪽여백) 관련 속성</h3>
+    <h4>블럭엘리먼트</h4>
+    <div id="div1">
+        <span style="background-color: #fff;">"상우하좌" 여백 각각 지정하기</span>
+    </div>
+    <div id="div2">
+        "상우하좌" 여백 동시 지정하기
+    </div>
+    <div id="div3">
+        "상하" "좌우" 여백 각각 지정하기
+    </div>
+    <div id="div4">
+        "상" "좌우" "하" 여백 각각 지정하기
+    </div>
+    <div id="div5">
+        "상" "우" "하" "좌" 여백 각각 지정하기
+    </div>
+    <h4>인라인 엘리먼트</h4>
+    <span style="border:1px solid orange; padding:40px 40px 40px 40px; color:royalblue;">
+    나는 span태그입니다. 인라인 엘리먼트입니다.</span><br>
+    <!-- 
+        span태그에 padding값을 설정하여도 
+        아래쪽 텍스트가 밀리지 않는것을 확인할 수 있음. 
+        인라인엘리먼트는 좌측 패딩만 컨텐츠에 적용되고 
+        상, 우, 하단의 경우 영역은 늘어나더라도 컨텐츠에 영향을 주지 않음
+        따라서 컨텐츠를 아래로 밀고 싶다면 부모엘리먼트에서 margin값을 통해 설정해야 한다.
+    -->
+    span태그 아래쪽 텍스트<br>
+    
+    <h3 style="margin-top:50px;">block과 block의 마진</h4>
+        <!-- 
+            bottom , top 양쪽에서 margin설정시 큰 쪽에 맞춰 떨어짐(동시 적용 x)
+            100 + 50 = 150px 만큼 간격이 생기는게 아니라 100px에 맞춰짐    
+         -->
+    <fieldset>
+        <legend>Case1</legend>
+        <div style="border:1px solid red; margin: 0 100px 100px;">Block1번</div>
+        <div style="border:1px solid green; margin-top: 50px;">Block2번</div>
+    </fieldset>
+
+    <h3 style="margin-top:50px;">block과 inline의 마진</h4>
+        <!-- 
+            bottom , top 양쪽에서 margin설정시 큰 쪽에 맞춰 떨어짐(동시 적용 x)
+            100 + 50 = 150px 만큼 간격이 생기는게 아니라 100px에 맞춰짐    
+         -->
+    <fieldset>
+        <!-- 
+            블럭에서 margin-bottom으로 설정된 값은 정상적으로 적용된다.
+            하지만 인라인에서 margin-top으로 설정한 값은 적용되지 않는다.
+            인라인엘리먼트는 margin-left만 유일하게 적용되므로 
+            위 Case1의 룰 또한 적용되지 않아서
+            block쪽 style속성에 맞춰 간격 떨어짐
+         -->
+        <legend>Case2</legend>
+        <div style="border:1px solid red; margin: 0 100px 100px;">Block 엘리먼트</div>
+        <span style="border:1px solid green; margin: 0 0 0 100px;">Inline 엘리먼트</span>
+    </fieldset>
+    
+    <h3 style="margin-top:50px;">inline과 inline의 마진</h4>
+        <!-- 
+            bottom , top 양쪽에서 margin설정시 큰 쪽에 맞춰 떨어짐(동시 적용 x)
+            100 + 50 = 150px 만큼 간격이 생기는게 아니라 100px에 맞춰짐    
+         -->
+    <fieldset>
+        <!-- 
+            인라인의 경우 margin-top, margin-bottom은 적용되지 않으므로
+            부모와의 여백을 설정하는 경우에는 부모쪽에서 적용해야 한다.
+            좌, 우측의 경우는 적용된다.
+         -->
+        <legend>Case3</legend>
+        <span style="background-color: rgb(255, 103, 103); margin-left:200px;">Inline 1번</span>
+        <span style="background-color: rgb(111, 207, 111); margin-right:200px;">Inline 2번</span>
+    </fieldset>
+</body>
+</html>
