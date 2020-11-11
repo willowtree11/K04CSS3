@@ -2,7 +2,14 @@
     font-family:'Noto Sans';font-size:25px;
     font-weight: 900;}
 
+.title{
+    margin:20px 0 0 20px;
+}
+.title>span{
+    font-size:18px; font-weight:normal;
+}
 table{width: 500px; height: 550px;
+    margin:20px;
     background-color: #DDD;
     border-radius: 10px;}
 table > tbody> tr > td {
