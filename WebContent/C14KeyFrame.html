@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C14KeyFrame.html</title>
+    <style>
+        #rect{
+            width:100px; height:100px; background-color: rgb(113, 197, 223);
+            line-height: 100px;
+            animation-duration: 3s;
+            /* 
+            https://www.w3schools.com/css/css3_animations.asp
+            해당 사이트 참고
+            */
+            animation-timing-function: ease-in-out;
+            /* @keyframe의 이름을 지정한다. */
+            animation-name: my_ani;
+            animation-iteration-count: infinite;
+        }
+        @keyframes my_ani {
+            from{width:100px; background-color: rgb(168, 235, 255);}
+            to{width:400px; background-color: rgb(0, 158, 206);}
+        }
+
+        #circ1{
+            width:100px; height:100px; background-color: rgb(125, 207, 125);
+            line-height: 100px; text-align:center; border-radius: 50px;
+            position: absolute; left:0; top:200px;
+            font-size:1.5em;
+            animation-duration: 3s;
+            animation-name: my_ani2;
+            animation-iteration-count: infinite;
+        }
+        @keyframes my_ani2 {
+            from{
+                left:0; width:100px; height:100px;
+                line-height: 100px; border-radius: 50px;
+                transform:rotate(0deg);
+                font-size: 1.5em;
+                background-color: rgb(125, 207, 125);
+            }
+            to{
+                left:400px; width:200px; height:200px;
+                line-height: 200px; border-radius: 100px;
+                transform:rotate(180deg);
+                font-size: 2.5em;
+                background-color: rgb(0, 121, 0);
+            }
+        }
+
+        #circ2{
+            width:50px; height:50px; background-color: rgb(212, 61, 106);
+            position: absolute; left:0; top:220px;
+            color:yellow; line-height: 50px; 
+            text-align:center; border-radius: 25px;
+
+            animation-duration: 3s;
+            animation-name: my_ani3;
+            /* 반복 횟수 지정: 정수로 지정 가능. infinite의 경우 무한반복 */
+            animation-iteration-count: infinite;
+        }
+        @keyframes my_ani3 {
+            from{
+                left:0; top:220px;
+                background-color: rgb(212, 61, 106);
+            }
+            to{
+                left:200px; top:420px;
+                background-color: rgb(61, 89, 212);
+            }
+        }
+        #circ2:hover{
+            /* 마우스오버시 일시정지 */
+            animation-play-state: paused;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Keyframe을 이용한 애니메이션</h2>
+    <div id="wrap">
+        <div id="rect"></div>
+        <div id="circ1">동그라미</div>
+        <div id="circ2">원</div>
+    </div>
+</body>
+</html>
