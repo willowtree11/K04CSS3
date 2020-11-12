@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C16Table.html</title>
+</head>
+<body>
+    <h2>순수 HTML5 태그로 제작한 테이블</h2>
+
+    <table border="0" cellpadding="5" cellspacing="1" 
+    bgcolor="#000" width="200">
+        <tr bgcolor="#fff" align="center">
+            <td bgcolor="#aaa" style="color:red;">가</td>
+            <td>나</td>
+            <td>다</td>
+        </tr>
+        <tr bgcolor="#fff">
+            <td bgcolor="#aaa"  align="center" style="color:red;">라</td>
+            <td>마</td>
+            <td>바</td>
+        </tr>
+    </table>
+
+    <br><p>---------------------------------------</p><br>
+
+    <h2>CSS3를 적용한 테이블</h2>
+    <style>
+        table#my_table{border: 1px solid #000; 
+            /*
+             default 테이블은 각 셀이 떨어져있으므로
+                border-spacing
+                    (셀과 셀사이의 간격을 조절, cellspacing과 동일,
+                    속성값 2개-가로/세로px 간격) 
+                조절로 간격을 없애고
+                border-collapse 
+                    (보더의 간격을 단순히 없애는 게 아니라
+                    보더를 겹치게 배치하여 얇게 표현 가능케 함)
+                설정으로 겹쳐지는 선
+                    (각 셀별 선, 전체 테이블을 감싸는 선)
+                을 없앤다
+             */
+            border-spacing:0px 0px; border-collapse: collapse; width:200px;}
+        table#my_table td{border: 1px solid #000; padding:5px;}
+        table#my_table tr:first-child{text-align: center;}
+        table#my_table tr td:first-child{color:#ff0000; background-color:#aaa; text-align:center;}
+    </style>
+    <table id="my_table">
+        <tr>
+            <td>가</td>
+            <td>나</td>
+            <td>다</td>
+        </tr>
+        <tr>
+            <td>라</td>
+            <td>마</td>
+            <td>바</td>
+        </tr>
+    </table>
+</body>
+</html>

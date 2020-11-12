@@ -1,0 +1,129 @@
+*{
+    border:none;
+    font-size:14px;
+    font-family: 'NotoSansKR';
+    text-align: left;
+    vertical-align:middle;
+}
+table{
+    border-spacing:0px 0px; 
+    border-collapse: collapse;
+}
+.formBody{    
+    width: 700px;
+    text-align:center;
+}
+.formBody span.rightAlg{
+    margin-bottom:10px;
+    display:block;
+    font-size:7px;
+    text-align: right;
+}
+.formBox{
+    margin-bottom: 40px;
+    padding: 40px 80px;
+    border:1px solid rgb(192, 192, 192);
+    border-top:2px solid #273855;
+}
+.clear{
+    clear:both;
+}
+.topTxt{
+    vertical-align: top;
+    padding-top:12px;
+}
+th, td{
+    padding: 5px 0;
+    color:rgb(78, 78, 78);
+}
+th:before { content:"* "; color:#ff231f;}
+th.optional:before{content:none;}
+td input, td select{
+    height:28px;
+    border:1px solid #d3d3d3;
+}
+td input.longInp{ 
+    width:65%;
+}
+
+input[id*="gender"] + label {
+	display: inline-block;
+	width: 58px;
+	height:28px;
+    background-color:#fff;
+    border:1px solid rgb(150, 150, 150);
+    border-radius: 3px;
+    cursor: pointer;
+    color:#666;
+    font-size:14px;
+    text-align: center;
+    line-height:28px;
+}
+input[id*="gender"]:checked + label {    
+    background-color: #274069;
+    color:#fff;
+    font-weight:900;
+}
+input[id*="gender"] {
+	display: none;
+}
+input[type="calendar"]{
+    margin-right:0;
+    float:left;
+}
+input.in130px{
+   width: 155px;
+   margin-right:0;
+}
+input[name="zipC"]{
+    margin-bottom:12px;
+    float:left;
+}
+button{
+    width:127px;
+    height:32px;
+    font-size:12px;
+    font-weight:700;
+    text-align:center;
+    background-color:rgb(46, 46, 46);
+    color:#fff;
+    border-radius: 3px;
+}
+button.calBtn{
+    width:30px;
+    vertical-align: middle;
+    /*background-color: transparent;*/
+    background: #666 url(../images/calIco.png) 6px 6px no-repeat;
+    background-size: 60%;
+    border-radius:0;
+}
+button.joinBtn{
+    margin: 0 auto;
+    background-color:#274069;
+}
+button[name="zipC"]{
+    float:left;
+}
+label{
+    display: inline;
+    color:rgb(168, 168, 168);
+    font-size:11px;
+}
+input[name="email"]{
+    width:119px;
+}
+select[name="email"]{
+
+    width:127px;
+    height:32px;
+    margin:0;
+}
+select[name*="hN"]{
+    width:72px;
+    margin-right:0;
+}
+span.footnote{
+    display:block;
+    color:rgb(168, 168, 168);
+    font-size:11px;
+}

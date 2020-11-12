@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleR.css">
+    <title>Registration02.html</title>
+</head>
+<body>
+    <div class="formBody">
+        <span class="rightAlg">*필수입력사항</span>
+        <div class="formBox">
+            <table>
+                <colgroup>
+                    <col width="20%">
+                    <col width=*>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>아이디</th>
+                        <td>
+                            <form action="">
+                                <input type="text" class="longInp" name="id">
+                                <button name="id">중복확인</button>                            
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="optional"></th>
+                        <td>
+                            <span class="footnote">※ 3~15자의 영문과 숫자만 가능합니다.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td>
+                            <input type="password" class="longInp" name="pwd">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="optional"></th>
+                        <td>
+                            <span class="footnote">
+                                ※ 영문/숫자/특수문자 조합 6~20자 이상 입력해주세요.(아이디/전화번호 사용 불가)<br>
+                                ※ 1234** 비밀번호는 홈페이지 사용에 제한됩니다.
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호 확인</th>
+                        <td>
+                            <input type="password" class="longInp" name="pwdChk">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>이름</th>
+                        <td>
+                            <form action="">
+                                <input type="text" name="userName" class="longInp">
+                                <input type="radio" name="gender" id="genderF" checked="checked"><label for="genderF">여</label>
+                                <input type="radio" name="gender" id="genderM"><label for="genderM">남</label>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>생년월일</th>
+                        <td>
+                            <form action="">
+                                <input type="calendar" value="2019-05-20">
+                                </label><button name="birthD" class="calBtn">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="clear">
+                        <th class="topTxt">주소</th>
+                        <td>
+                            <input type="text" name="zipC" numberOnly>
+                            <button name="zipC">우편번호 찾기</button>
+                            <div class="clear">
+                                <input type="text" name="addr"><input type="text" name="addr">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="clear">
+                        <th>이메일</th>
+                        <td>
+                            <input type="text" name="email">
+                            <span>&#64;</span>
+                            <input type="text" name="email">
+                            <select name="email" id="email">
+                                <option value="gmail.com" selected="selected">gmail.com</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="기타">기타</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>휴대폰번호</th>
+                        <td>
+                            <select name="cellPhN" id="cellPhN">
+                                <option value="010" selected="selected">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="기타">기타</option>
+                            </select>
+                            <span>-</span>
+                            <input type="text" name="cellPhN" class="in130px" numberOnly >
+                            <span>-</span>
+                            <input type="text" name="cellPhN" class="in130px" numberOnly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="optional">전화번호</th>
+                        <td>
+                            <select name="phN" id="">
+                                <option value="02" selected="selected">02</option>
+                                <option value="031">031</option>
+                                <option value="032">032</option>
+                                <option value="기타">기타</option>
+                            </select>
+                            <span>-</span>
+                            <input type="text" class="in130px">
+                            <span>-</span>
+                            <input type="text"  class="in130px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="optional">출판계약일</th>
+                        <td>
+                            <input type="calendar">
+                            <button class="calBtn"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="optional">출판종료일</th>
+                        <td>
+                            <input type="calendar">
+                            <button class="calBtn"></button>
+                        </td>
+                    </tr>
+                    <tr class="chkboxWrap">
+                        <th class="optional topTxt">선택정보</th>
+                        <td>
+                            <form action="">
+                                <input type="checkbox">
+                                <label for="">자비출판</label>
+                                <input type="checkbox">
+                                <label for="">반기획출판</label>
+                                <input type="checkbox">
+                                <label for="">프리미엄출판</label>
+                                <input type="checkbox">
+                                <label for="">출판컨설팅</label>
+                                <br>
+                                <input type="checkbox">
+                                <label for="">기획출판</label>
+                                <input type="checkbox">
+                                <label for="">미정</label>
+                            </form>
+                        </td>
+                    </tr>                
+                </tbody>
+            </table>
+        </div>    
+    </div>
+    <div class="formBody">
+        <p>
+            이용약관 동의 
+            <span>
+                선택항목에 동의하지 않은 경우도 회원가입 및
+                일반적인 서비스를 이용할 수 있습니다.
+            </span> 
+        </p>
+        <div class="formBox">
+            <input type="checkbox">
+            <label for="">전체동의</label>
+            <div class="termsChk">
+                <input type="text">
+                <label for="">이용약관<span>(필수)</span></label>
+                <span><a href="#">약관보기></a></span>
+            </div>
+            <div class="termsChk">
+                <input type="text">
+                <label for="">개인정보처리방침<span>(필수)</span></label>
+                <span><a href="#">약관보기></a></span>
+            </div>
+            <div class="termsChk">
+                <input type="text">
+                <label for="">이벤트 및 혜택 알림 수신<span>(선택)</span></label>
+                <input type="text">
+                <label for="">SMS</label>
+                <input type="text">
+                <label for="">이메일</label>
+            </div>
+
+        </div>
+        <button class="joinBtn">가입 하기</button>
+    </div>
+</body>
+</html>

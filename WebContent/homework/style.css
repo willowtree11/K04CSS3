@@ -29,6 +29,7 @@ button:hover{
 }
 .lcd{
     height:120px;
+    overflow: hidden;
 }
 .lcd input{
     width:100%; height:100%;
