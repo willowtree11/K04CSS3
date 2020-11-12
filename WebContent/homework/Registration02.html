@@ -21,11 +21,11 @@
                         <td>
                             <form action="">
                                 <input type="text" class="longInp" name="id">
-                                <button name="id">중복확인</button>                            
+                                <button name="id" class="right">중복확인</button>                            
                             </form>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="clear">
                         <th class="optional"></th>
                         <td>
                             <span class="footnote">※ 3~15자의 영문과 숫자만 가능합니다.</span>
@@ -58,27 +58,29 @@
                         <td>
                             <form action="">
                                 <input type="text" name="userName" class="longInp">
-                                <input type="radio" name="gender" id="genderF" checked="checked"><label for="genderF">여</label>
-                                <input type="radio" name="gender" id="genderM"><label for="genderM">남</label>
+                                <div class="right">
+                                    <input type="radio" name="gender" id="genderF" checked="checked"><label for="genderF">여</label>
+                                    <input type="radio" name="gender" id="genderM"><label for="genderM">남</label>
+                                </div>
                             </form>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="clear">
                         <th>생년월일</th>
                         <td>
                             <form action="">
                                 <input type="calendar" value="2019-05-20">
-                                </label><button name="birthD" class="calBtn">
+                                </label><button name="birthD" class="calBtn"></button>
                             </form>
                         </td>
                     </tr>
                     <tr class="clear">
                         <th class="topTxt">주소</th>
                         <td>
-                            <input type="text" name="zipC" numberOnly>
+                            <input type="text" name="zipC" class="longInp" numberOnly>
                             <button name="zipC">우편번호 찾기</button>
                             <div class="clear">
-                                <input type="text" name="addr"><input type="text" name="addr">
+                                <input type="text" name="addr"><input type="text" name="addr" class="right">
                             </div>
                         </td>
                     </tr>
@@ -88,15 +90,15 @@
                             <input type="text" name="email">
                             <span>&#64;</span>
                             <input type="text" name="email">
-                            <select name="email" id="email">
-                                <option value="gmail.com" selected="selected">gmail.com</option>
+                            <select name="email" id="email" class="right">
+                                <option value="직접입력" selected="selected">직접입력</option>
+                                <option value="gmail.com" >gmail.com</option>
                                 <option value="naver.com">naver.com</option>
                                 <option value="daum.net">daum.net</option>
-                                <option value="기타">기타</option>
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="clear">
                         <th>휴대폰번호</th>
                         <td>
                             <select name="cellPhN" id="cellPhN">
@@ -144,19 +146,19 @@
                         <th class="optional topTxt">선택정보</th>
                         <td>
                             <form action="">
-                                <input type="checkbox">
-                                <label for="">자비출판</label>
-                                <input type="checkbox">
-                                <label for="">반기획출판</label>
-                                <input type="checkbox">
-                                <label for="">프리미엄출판</label>
-                                <input type="checkbox">
-                                <label for="">출판컨설팅</label>
+                                <input type="checkbox" id="pub1">
+                                <label for="pub1">자비출판</label>
+                                <input type="checkbox" id="pub2">
+                                <label for="pub2">반기획출판</label>
+                                <input type="checkbox" id="pub3">
+                                <label for="pub3">프리미엄출판</label>
+                                <input type="checkbox" id="pub4">
+                                <label for="pub4">출판컨설팅</label>
                                 <br>
-                                <input type="checkbox">
-                                <label for="">기획출판</label>
-                                <input type="checkbox">
-                                <label for="">미정</label>
+                                <input type="checkbox" id="pub5">
+                                <label for="pub5">기획출판</label>
+                                <input type="checkbox" id="pub6">
+                                <label for="pub6">미정</label>
                             </form>
                         </td>
                     </tr>                
@@ -165,33 +167,43 @@
         </div>    
     </div>
     <div class="formBody">
-        <p>
-            이용약관 동의 
-            <span>
+        <p class="formBoxTtl">
+            이용약관 동의<span class="strongChk">*</span>
+            <span class="subTxt">
                 선택항목에 동의하지 않은 경우도 회원가입 및
                 일반적인 서비스를 이용할 수 있습니다.
             </span> 
         </p>
         <div class="formBox">
-            <input type="checkbox">
-            <label for="">전체동의</label>
-            <div class="termsChk">
-                <input type="text">
-                <label for="">이용약관<span>(필수)</span></label>
-                <span><a href="#">약관보기></a></span>
+            <div class="mainChk">
+                <input type="checkbox" id="allAgree">
+                <label for="allAgree" class="bigLbl">전체동의</label>
             </div>
-            <div class="termsChk">
-                <input type="text">
-                <label for="">개인정보처리방침<span>(필수)</span></label>
-                <span><a href="#">약관보기></a></span>
-            </div>
-            <div class="termsChk">
-                <input type="text">
-                <label for="">이벤트 및 혜택 알림 수신<span>(선택)</span></label>
-                <input type="text">
-                <label for="">SMS</label>
-                <input type="text">
-                <label for="">이메일</label>
+            <div class="subChk">
+                <div class="termsChk">
+                    <input type="checkbox" id="term1">
+                    <label for="term1">이용약관<span>(필수)</span></label>
+                    <span><a href="#">약관보기></a></span>
+                </div>
+                <div class="termsChk">
+                    <input type="checkbox" id="term2">
+                    <label for="term2">개인정보처리방침<span>(필수)</span></label>
+                    <span><a href="#">약관보기></a></span>
+                </div>
+                <div class="termsChk">
+                    <input type="checkbox" id="term3">
+                    <label for="term3">이벤트 및 혜택 알림 수신<span>(선택)</span></label>
+                    <div class="subTerms">
+                        <div>
+                            <input type="checkbox" id="subTrm1">
+                            <label for="subTrm1">SMS</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="subTrm2">
+                            <label for="subTrm2">이메일</label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

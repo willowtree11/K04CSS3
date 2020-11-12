@@ -32,6 +32,9 @@ table{
     vertical-align: top;
     padding-top:12px;
 }
+.right{
+    float:right;
+}
 th, td{
     padding: 5px 0;
     color:rgb(78, 78, 78);
@@ -76,9 +79,13 @@ input.in130px{
    margin-right:0;
 }
 input[name="zipC"]{
-    margin-bottom:12px;
+    margin-bottom: 5px;
     float:left;
 }
+input[name=addr]{
+    width:47%;
+}
+
 button{
     width:127px;
     height:32px;
@@ -90,6 +97,7 @@ button{
     border-radius: 3px;
 }
 button.calBtn{
+    display:inline-block;
     width:30px;
     vertical-align: middle;
     /*background-color: transparent;*/
@@ -102,7 +110,13 @@ button.joinBtn{
     background-color:#274069;
 }
 button[name="zipC"]{
-    float:left;
+    float:right;
+}
+.chkboxWrap td form input{
+    margin:0;
+}
+.chkboxWrap td form label{
+    margin-right:15px;
 }
 label{
     display: inline;
@@ -114,7 +128,7 @@ input[name="email"]{
 }
 select[name="email"]{
 
-    width:127px;
+    width:140px;
     height:32px;
     margin:0;
 }
@@ -126,4 +140,61 @@ span.footnote{
     display:block;
     color:rgb(168, 168, 168);
     font-size:11px;
+}
+/* 아래쪽 formBody */
+.formBoxTtl{
+    margin-bottom:10px;
+    font-size:19px;
+    font-weight:bold;
+    color:#666;
+}
+.strongChk{
+    vertical-align: top;
+}
+.formBoxTtl span.subTxt{
+    font-size:11px;
+}
+.mainChk{
+    margin-bottom:15px;
+}
+.subChk{
+    text-indent:1em;
+}
+.termsChk{
+    margin-bottom:5px;
+    vertical-align: middle;
+    font-weight:700;
+}
+.termsChk span{
+    color:#999;
+    vertical-align: top;
+}
+.subChk label{    
+    font-size:13px;
+    color:rgb(78, 78, 78);
+}
+label.bigLbl{
+    font-weight:bold;
+    font-size:14px;
+    color:rgb(78, 78, 78);
+}
+.termsChk>span>a{
+    color:#666;
+    font-size:11px;
+    text-decoration: none;
+    vertical-align: bottom;
+}
+.subTerms{
+    text-indent: 2em;
+    margin-top:5px;
+    font-weight:700;
+}
+.subTerms label{
+    margin-right:20px;
+}
+.subTerms>div{
+    display:inline-block;
+}
+.subTerms>div:first-child{
+    text-indent:0;
 }
