@@ -5,12 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Calculator</title>
-    <style>
-        /*
-            eval()함수를 사용하여
-            문자열 "1+2" 를 쿼테이션 내부 1+2를 실제 연산자화 하여 계산 후 반환하도록 하여 계산기 예제에 사용하기
-        */
-    </style>
+    <script>
+        /* 
+            0. backs, c 버튼 기능붙이기
+            1. 각 버튼이 id display input에 입력되게 하기
+            2. display에 입력된 식이 계산되게 하기(eval)
+            3. 계산값이 display에 출력되게 하기
+         */
+        
+        
+        function addN(btnVal){
+            var dsp=document.getElementsById("lcd");
+            dsp.value+=btnVal;
+        }
+        function Calculate(){
+            var lcd=document.getElementsById("lcd");
+            var result=eval(lcd.value);
+            lcd.value = result;
+        }
+        function Reset(){
+            var lcd=document.getElementsById("lcd");
+            lcd.value="";
+        }
+        //function BackSpace(){
+        //글자길이 lcd.value.length
+        //끝글자 지우기 
+        //}
+    </script>
 </head>
 <body>
     <div class="title">
@@ -18,40 +39,51 @@
         <span>파일명 : Calculator.html</span>
     </div>
     <br>
+    <!-- 
+        hidden form 2개
+        ->수식 저장할 폼 한개(calcForm), 연산기호 저장할 폼(opForm) 한개(연산기호 한번만 눌릴수 있도록 구성함)*
+        * 연산기호가 있으면 1번째 폼에서 끝부분만 바꾸기
+     -->
+    
     <table>
         <tbody>
             <tr class="lcd">
-                <td colspan="4"><input type="text" name="cal" value="123+654 "></td>
+                <td colspan="4">
+                    <input type="text" id="lcd" value="0">
+                    <input type="text" id="calcForm">
+                    <input type="text" id="opForm">
+                </td>
             </tr>
             <tr class="bigBtn">
-                <td colspan="2"><button>BackSpace</button></td>
-                <td colspan="2"><button>C</button></td>
+                <td colspan="2"><button onclick="BackSpace()">BackSpace</button></td>
+                <td colspan="2"><button onclick="Reset()">C</button></td>
             </tr>
             <tr class="smallBtn">
-                <td><button>1</button></td>
-                <td><button>2</button></td>
-                <td><button>3</button></td>
-                <td><button>/</button></td>
+                <td><button onclick="addN(1)">1</button></td>
+                <td><button onclick="add(2)">2</button></td>
+                <td><button onclick="add(3)">3</button></td>
+                <td><button onclick="add('/')">/</button></td>
             </tr>
             <tr class="smallBtn">
-                <td><button>4</button></td>
-                <td><button>5</button></td>
-                <td><button>6</button></td>
-                <td><button>X</button></td>
+                <td><button onclick="add(4)">4</button></td>
+                <td><button onclick="add(5)">5</button></td>
+                <td><button onclick="add(6)">6</button></td>
+                <td><button onclick="add('*')">X</button></td>
             </tr>
             <tr class="smallBtn">
-                <td><button>7</button></td>
-                <td><button>8</button></td>
-                <td><button>9</button></td>
-                <td><button>+</button></td>
+                <td><button onclick="add(7)">7</button></td>
+                <td><button onclick="add(8)">8</button></td>
+                <td><button onclick="add(9)">9</button></td>
+                <td><button onclick="add('+')">+</button></td>
             </tr>
             <tr class="smallBtn">
-                <td><button>=</button></td>
-                <td><button>0</button></td>
-                <td><button>.</button></td>
-                <td><button>-</button></td>
+                <td><button onclick="Calculate()" value="=">=</button></td>
+                <td><button onclick="add(0)">0</button></td>
+                <td><button onclick="add('.')">.</button></td>
+                <td><button onclick="add('-')">-</button></td>
             </tr>
         </tbody>
     </table>
+    
 </body>
 </html>
