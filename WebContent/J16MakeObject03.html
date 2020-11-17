@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J16MakeObject03.html</title>
+    <script>
+        var Account = function(owner, code, balance){
+            this.owner=owner;
+            this.code=code;
+            this.balance=balance;
+
+            this.inquiry=function(){
+                return this.balance;
+            }
+            this.deposit=function(money){
+                this.balance += money;
+            }
+            this.withdraw=function(money){
+                this.balance -= money;
+                return money;
+            }
+            return this;
+        };
+    </script>
+</head>
+<body>
+    <h2>생성자를 통한 사용자객체 만들기</h2>
+
+    <script>
+        var account=new Account('코스모', '123456-789', 150000);
+
+        document.write("accoutn객체=><br>")
+    </script>
+</body>
+</html>

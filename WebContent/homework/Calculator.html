@@ -4,28 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/Dalgona/neodgm-webfont@1.510/neodgm_code/style.css">
     <title>Calculator</title>
     <script>
-        /* 
-            0. backs, c 버튼 기능붙이기
-            1. 각 버튼이 id display input에 입력되게 하기
-            2. display에 입력된 식이 계산되게 하기(eval)
-            3. 계산값이 display에 출력되게 하기
-         */
-        
-        
-        function addN(btnVal){
-            var dsp=document.getElementsById("lcd");
-            dsp.value+=btnVal;
+        function addVal(val){
+            var lcd=document.getElementById('lcd');
+            
+            if(val!=undefined){
+                lcd.innerHTML += val;
+            }
+            else{
+                lcd.innerHTML='0'; 
+            }
         }
         function Calculate(){
-            var lcd=document.getElementsById("lcd");
-            var result=eval(lcd.value);
-            lcd.value = result;
-        }
-        function Reset(){
-            var lcd=document.getElementsById("lcd");
-            lcd.value="";
+            var lcd=document.getElementById('lcd');
+            var result=eval(lcd);
+            lcd = result;
         }
         //function BackSpace(){
         //글자길이 lcd.value.length
